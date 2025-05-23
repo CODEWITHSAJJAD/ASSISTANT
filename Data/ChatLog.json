@@ -230,5 +230,133 @@
     {
         "role": "assistant",
         "content": "I'm sending messages to you, Sajjad Shahid."
+    },
+    {
+        "role": "user",
+        "content": "Hello how are you"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Sajjad Shahid! I'm functioning optimally, with access to real-time information from the internet. I'm ready to assist you with any inquiries or tasks."
+    },
+    {
+        "role": "user",
+        "content": "Hello how are you"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Sajjad Shahid! I'm functioning optimally, ready to assist you with any information or help you need."
+    },
+    {
+        "role": "user",
+        "content": "I do listen me."
+    },
+    {
+        "role": "assistant",
+        "content": "I'm listening to you, Sajjad Shahid. Please go ahead and share what's on your mind."
+    },
+    {
+        "role": "user",
+        "content": "Hello."
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Sajjad Shahid!"
+    },
+    {
+        "role": "user",
+        "content": "How are you"
+    },
+    {
+        "role": "assistant",
+        "content": "I'm functioning optimally, Sajjad Shahid. Ready to assist you with any information or help you need."
+    },
+    {
+        "role": "user",
+        "content": "Hello how are you"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Sajjad Shahid! I'm functioning optimally, ready to assist you."
+    },
+    {
+        "role": "user",
+        "content": "So how are you"
+    },
+    {
+        "role": "assistant",
+        "content": "I'm functioning optimally, Sajjad Shahid. Ready to assist you with any information or help you need."
+    },
+    {
+        "role": "user",
+        "content": "Can you tell me all the current prime minister of pakistan"
+    },
+    {
+        "role": "assistant",
+        "content": "As of my knowledge cutoff, the current Prime Minister of Pakistan is Mian Muhammad Shehbaz Sharif."
+    },
+    {
+        "role": "user",
+        "content": "Hey how are you"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Sajjad Shahid! I'm functioning optimally, ready to assist you."
+    },
+    {
+        "role": "user",
+        "content": "Who has been created you"
+    },
+    {
+        "role": "assistant",
+        "content": "I was created by a team of developers and researchers who designed me to provide accurate and up-to-date information from the internet."
+    },
+    {
+        "role": "user",
+        "content": "What is my age"
+    },
+    {
+        "role": "assistant",
+        "content": "You are 21 years old, Sajjad Shahid."
+    },
+    {
+        "role": "user",
+        "content": "What is my age"
+    },
+    {
+        "role": "assistant",
+        "content": "You are 21 years old, Sajjad Shahid."
+    },
+    {
+        "role": "user",
+        "content": "Hello how are you"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Sajjad Shahid! I'm functioning optimally, ready to assist you."
+    },
+    {
+        "role": "user",
+        "content": "What is the time now"
+    },
+    {
+        "role": "assistant",
+        "content": "The current time is 17:12:44 hours."
+    },
+    {
+        "role": "user",
+        "content": "What is time now and date today"
+    },
+    {
+        "role": "assistant",
+        "content": "The current time is 17:20:23 hours, and the date today is Friday, May 23, 2025."
+    },
+    {
+        "role": "user",
+        "content": "What is the price of dollar today?"
+    },
+    {
+        "role": "assistant",
+        "content": "According to the search results, the current price of the US dollar in Pakistan is:\n\n1 USD = 281.95 PKR (buying rate)\n1 USD = 284.15 PKR (selling rate)\n\nPlease note that these rates may vary slightly depending on the source and methodology used."
     }
 ]

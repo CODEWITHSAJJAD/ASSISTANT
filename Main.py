@@ -1,12 +1,12 @@
-from Frontend.GUI1 import(
+from Frontend.GUI import(
     GraphicalUerInterFace,
     SetAssistantStatus,
     ShowTextToScreen,
     TempDirectoryPath,
-    SetMcrophoneStatus,
+    SetMicrophoneStatus,
     AnswerModifier,
     QueryModifier,
-    GetMcrophoneStatus,
+    GetMicrophoneStatus,
     GetAssistantStatus)
 from Backend.Model import FirstLayerDMM
 from Backend.RealtimeSearchEngine import RealtimeSearchEngine
@@ -63,7 +63,7 @@ def ShowChatsOnGUI():
         File.write(result)
         File.close()
 def InitialExecution():
-    SetMcrophoneStatus("False")
+    SetMicrophoneStatus("False")
     ShowTextToScreen("")
     ShowDefaultChatIfNoChats()
     ChatLogIntegration()
@@ -140,7 +140,7 @@ def MainExecution():
                 os._exit(1)
 def FirstThread():
     while True:
-        CurrentStatus=GetMcrophoneStatus()
+        CurrentStatus=GetMicrophoneStatus()
         if CurrentStatus == "True":
             MainExecution()
         else:
@@ -152,12 +152,8 @@ def FirstThread():
 def SecondThread():
     GraphicalUerInterFace()
 if __name__=="__main__":
-    # thread1 = threading.Thread(target=SecondThread, daemon=True)
-    # thread2 = threading.Thread(target=FirstThread, daemon=True)
-    # thread1.start()
-    # thread2.start()
-    # thread1.join()  # Wait for GUI thread to complete
+    
     thread2=threading.Thread(target=FirstThread,daemon=True)
     thread2.start()
     SecondThread()
-    # FirstThread()
+    
