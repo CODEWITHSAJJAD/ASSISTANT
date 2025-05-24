@@ -464,10 +464,16 @@ class ChatScreen(QWidget):
         
         self.chat_container = QWidget()
         self.chat_container.setStyleSheet("background-color: transparent;")
+        self.chat_container.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
         self.chat_layout = QVBoxLayout(self.chat_container)
         self.chat_layout.setContentsMargins(20, 20, 20, 20)
-        self.chat_layout.setSpacing(15)
-        self.chat_layout.setAlignment(Qt.AlignTop)
+        self.chat_layout.setSpacing(10)  # Reduced spacing between messages
+        self.chat_layout.setAlignment(Qt.AlignTop) # Ensure alignment is to the top
+        
+        # Add a stretch to push messages to the top
+        # This should be the last item in the layout to absorb extra space
+        self.vertical_spacer = QSpacerItem(20, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.chat_layout.addItem(self.vertical_spacer)
         
         self.chat_area.setWidget(self.chat_container)
         
@@ -517,7 +523,6 @@ class ChatScreen(QWidget):
             }
             QPushButton:hover {
                 background: rgba(255, 255, 255, 0.1);
-                
             }
             QPushButton:pressed {
                 background-color: #009cc2;
@@ -575,6 +580,7 @@ class ChatScreen(QWidget):
                 
                 if messages:
                     # Split messages by line and add them to chat
+                    # Add messages in reverse order to add them to the top of the layout
                     for line in messages.split('\n'):
                         if line.strip() and line not in self.messages:
                             self.messages.append(line)
@@ -606,7 +612,8 @@ class ChatScreen(QWidget):
                 }
             """)
             label.setWordWrap(True)
-            label.setMaximumWidth(400)
+            label.setTextFormat(Qt.PlainText)  # User messages as plain text
+            label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Minimum)
             
             # Add spacer to push message to right
             spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
@@ -624,20 +631,27 @@ class ChatScreen(QWidget):
                     font-size: 14px;
                     border: 1px solid rgba(255, 255, 255, 0.1);
                 }
-                """)
+            """)
             label.setWordWrap(True)
-            label.setMaximumWidth(400)
+            label.setTextFormat(Qt.RichText)  # Allow rendering of rich text/HTML-like tags
+            label.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
             
             message_layout.addWidget(label)
             # Add spacer to push next message to right
             spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
             message_layout.addItem(spacer)
         
-        self.chat_layout.addWidget(message_widget)
+        # Insert the new message widget before the vertical spacer
+        # The vertical spacer is always the last item
+        self.chat_layout.insertWidget(self.chat_layout.count() - 1, message_widget)
+        
+        # Ensure the chat container's size is adjusted after adding a message
+        self.chat_container.adjustSize()
+        
         # Scroll to bottom after adding new message
-        self.chat_area.verticalScrollBar().setValue(
+        QTimer.singleShot(100, lambda: self.chat_area.verticalScrollBar().setValue(
             self.chat_area.verticalScrollBar().maximum()
-        )
+        ))
 
 class MainScreen(QWidget):
     def __init__(self):
