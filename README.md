@@ -45,7 +45,7 @@ A powerful and versatile AI assistant that combines voice recognition, text-to-s
 
 1. Clone the repository:
 ```bash
-git clone [https://github.com/CODEWITHSAJJAD/ASSISTANT]
+git clone https://github.com/CODEWITHSAJJAD/ASSISTANT
 ```
 
 2. Create a virtual environment:
